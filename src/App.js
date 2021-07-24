@@ -3,6 +3,10 @@ import React from "react";
 function App () {
   return <div>
   <Folder name="Desktop">
+  <Folder name="Music">
+  <File name="all_star.jpeg"/>
+  <File name="express_file.mp4"/>
+  </Folder>
   <File name="dogs.jpeg"/>
   <File name="cats.png"/>
     </Folder>
