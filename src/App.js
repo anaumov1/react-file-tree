@@ -4,7 +4,7 @@ function App () {
   return <div>
   <Folder name="Desktop">
   <Folder name="Music">
-  <File name="all_star.jpeg"/>
+  <File name="all_star.mp4"/>
   <File name="express_file.mp4"/>
   </Folder>
   <File name="dogs.jpeg"/>
@@ -39,8 +39,18 @@ const handleClick = () => setIsOpen(!isOpen);
 };
 
 const File = (props) => {
+  const { name } = props;
+  const fileExtension = name.split('.')[1];
+  const fileIcons = {
+    mp4: 'headphones',
+    jpeg: 'file image',
+    png: 'file image outline',
+  };
   
-  return <div>{props.name}</div>
+  return <div>
+          <i className={`${fileIcons[fileExtension]} icon`}></i>
+    {name}
+    </div>
 };
 
 export default App;
