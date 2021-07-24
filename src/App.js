@@ -2,7 +2,7 @@ import React from "react";
 
 function App () {
   return <div>
-  <Folder name="Desktop">
+  <Folder name="Desktop" isOpen = {true}>
   <Folder name="Music">
   <File name="all_star.jpeg"/>
   <File name="express_file.mp4"/>
@@ -19,16 +19,18 @@ function App () {
 }
 
 const Folder = (props) => {
+  const {name, isOpen, children} = props;
   const borderStyle = { border: '2px solid pink'};
   return <div style = {borderStyle}>
-    {props.name}
+    {name}
     <div style = {{ marginLeft: '17px '}}>
-    {props.children}
+    {isOpen ? children : null}
     </div>
     </div>
 };
 
 const File = (props) => {
+  
   return <div>{props.name}</div>
 };
 
